@@ -1,0 +1,6 @@
+.DS_Store
+*.zip
+.ipynb_checkpoints
+.venv
+.env
+postgres/postgres-data

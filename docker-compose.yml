@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  endpoint:
+    image: endpoint:latest
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      network: host
+    ports:
+      - 5004:5004
+    working_dir: /home/admin
+    environment:
+      - P_HOST=192.168.1.5
+      - P_PORT=5433
+      - PORT=5004
+    tty: true

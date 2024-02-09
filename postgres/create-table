@@ -1,0 +1,20 @@
+-- Table: public.time_spent
+
+-- DROP TABLE IF EXISTS public.time_spent;
+
+CREATE TABLE IF NOT EXISTS public.time_spent
+(
+    id serial NOT NULL,
+    date date NOT NULL,
+    "time" time without time zone NOT NULL,
+    gate text COLLATE pg_catalog."default",
+    acregistration text COLLATE pg_catalog."default",
+    total_time_spent double precision,
+    image_save_time double precision,
+    CONSTRAINT time_spent_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.time_spent
+    OWNER to postgres;
