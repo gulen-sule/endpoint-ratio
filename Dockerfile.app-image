@@ -1,0 +1,7 @@
+FROM python:3.11
+
+COPY endpoint.tar.gz ${APP_PATH}
+RUN tar -xvzf endpoint.tar.gz
+
+WORKDIR /home/admin
+ENTRYPOINT python3 endpoint.py --port ${PORT} --postgres_host ${P_HOST} --postgres_port ${P_PORT} 
