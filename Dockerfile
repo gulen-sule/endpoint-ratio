@@ -20,5 +20,4 @@ RUN chown -R admin:admin ${APP_PATH}
 USER admin
 
 WORKDIR /home/admin
-COPY swagger.yml ${APP_PATH}
 ENTRYPOINT python3 endpoint.py --port ${PORT} --postgres_host ${P_HOST} --postgres_port ${P_PORT} 
